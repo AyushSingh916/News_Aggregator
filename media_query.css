@@ -1,0 +1,21 @@
+@media(max-width: 586px) {
+    .nav .container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        /* height: 120px; */
+        padding: 0;
+    }
+}
+
+@media(max-width: 820 ) and (min-width: 587) {
+    #nav {
+        background-color: #fff;
+    }
+    .nav .container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
