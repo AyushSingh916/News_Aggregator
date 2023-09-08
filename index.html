@@ -3,18 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>News Aggregator</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>News Aggregator</h1>
-    </header>
+    <nav class="nav" id="nav">
+        <div class="container">
+            <h1 class="logo"><a href="./index.html">News Aggregator</a></h1>
+            <ul>
+                <li class="current"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <main>
         <section id="news-list">
-            <!-- News articles will be displayed here -->
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="">
+                    <div class="card-text">
+                        <h2>Breaking News</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam deleniti nam eos nisi consequuntur molestiae impedit optio dolor quibusdam tempora, dolores veritatis perferendis totam soluta numquam? Adipisci natus provident beatae.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="">
+                    <div class="card-text">
+                        <h2>Breaking News</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam deleniti nam eos nisi consequuntur molestiae impedit optio dolor quibusdam tempora, dolores veritatis perferendis totam soluta numquam? Adipisci natus provident beatae.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="">
+                    <div class="card-text">
+                        <h2>Breaking News</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam deleniti nam eos nisi consequuntur molestiae impedit optio dolor quibusdam tempora, dolores veritatis perferendis totam soluta numquam? Adipisci natus provident beatae.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    <footer class="foot">
+        <div class="container">
+            <p id="rights">All rights reserved @2023</p>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="#nav">Top</a></li>
+            </ul>
+        </div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>
