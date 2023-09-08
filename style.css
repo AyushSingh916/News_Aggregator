@@ -76,15 +76,19 @@ body {
 .card {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 7px 5px;
     border: 1px solid #796a6a;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
     height: 120px;
     width: 120px;
     margin: 2px 2px;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .card-text {
@@ -98,7 +102,7 @@ body {
 /* --------------------- footer code --------------------- */
 
 .foot {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background-color: #222;
     height: 75px;
@@ -135,4 +139,41 @@ body {
 
 #rights {
     padding: 10px;
+}
+
+@media(max-width: 768px) {
+    .nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+    
+    .nav ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 5px;
+        font-size: 16px;
+    }
+    
+    .nav .container .logo a{
+        font-size: 20px;
+    }
+    
+    .nav .container .current a{
+        color: #c0392b;
+        font-weight: bold;
+    }
+    
+    .nav .container a:hover{
+        color: #c0392b;
+        font-weight: bolder;
+    }
 }
