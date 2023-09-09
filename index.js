@@ -6,9 +6,8 @@ const cards = document.getElementById('card-container');
 const search = document.getElementById('search');
 const form = document.getElementById("form");
 const submitBtn = document.getElementById('btn');
-const readMore = document.getElementById('readMore');
 
-// getTopHeadLines(API_URL);
+getTopHeadLines(API_URL);
 
 async function getTopHeadLines(url) {
     const res = await fetch(url);
@@ -19,31 +18,40 @@ async function getTopHeadLines(url) {
 }
 
 function showTopHeadLines(data) {
-    if(data.status === "ok") {
+    if (data.status === "ok") {
         cards.innerHTML = '';
         const articles = data.articles;
 
-        articles.forEach((article) => {
+        articles.forEach((article, index) => {
             const card = document.createElement('div');
             card.classList.add('card');
+            card.id = `card-${index}`; // Add a unique identifier to each card
 
             card.innerHTML = `
             <div id="thumbnail">
                 <img src="${article.urlToImage}" alt="">
-                <p id = "author_name">${article.author}</p>
+                <p id="author_name">${article.author}</p>
+                <a href="${article.url} id = "visSrc">Visit Source</a>
             </div>
-                <div class="card-text">
-                    <h3>${article.title}</h3>
-                    <p>${article.description}</p>
-                    <hr>
-                    <p class = "content">${article.content}</p>
-                    <a href="${article.url}">Visit Source</a>
-                    <button id="readMore">Read More</button>
-                </div>
-            `
-            // console.log(article);
+            <div class="card-text">
+                <h3>${article.title}</h3>
+                <p>${article.description}</p>
+                <hr>
+                <button class="readMore" id = "read">Read More</button>
+                <div class="hidden-content" id="content-${index}">${article.content}</div> <!-- Hidden content -->
+            </div>
+            `;
+
             cards.appendChild(card);
-        })
+        });
+
+        // Add event listeners for "Read More" buttons
+        const readMoreButtons = document.querySelectorAll('.readMore');
+        readMoreButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                toggleHiddenContent(index); // Toggle content when the button is clicked
+            });
+        });
     } else {
         throw new Error("Failed to get the articles");
     }
@@ -76,6 +84,20 @@ submitBtn.addEventListener('click', () => {
     }
 })
 
-readMore.addEventListener('click', () => {
-    
-})
+function toggleHiddenContent(index) {
+    const content = document.getElementById(`content-${index}`);
+    const readMoreButton = document.querySelector(`#card-${index} .readMore`); // Select the button within the card
+
+    if (content) {
+        content.classList.toggle('show');
+        readMoreButton.classList.toggle('show');
+
+        if (content.classList.contains('show')) {
+            // If content is shown, set button text to "Read Less"
+            readMoreButton.innerText = 'Read Less';
+        } else {
+            // If content is hidden, set button text to "Read More"
+            readMoreButton.innerText = 'Read More';
+        }
+    }
+}

@@ -161,9 +161,6 @@ input {
 .card-text p{
     margin: 5px;
 }
-.card-text a{
-    text-decoration: none;
-}
 
 .thumbnail {
     display: flex;
@@ -177,6 +174,13 @@ input {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+}
+
+#thumbnail a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 #readMore {
@@ -223,4 +227,26 @@ input {
 
 #rights {
     padding: 10px;
+}
+
+.hidden-content {
+    display: none;
+}
+
+.readMore {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+
+.hidden-content.show {
+    display: block;
+}
+
+#read.show {
+    background-color: darkblue
 }
