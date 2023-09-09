@@ -6,8 +6,9 @@ const cards = document.getElementById('card-container');
 const search = document.getElementById('search');
 const form = document.getElementById("form");
 const submitBtn = document.getElementById('btn');
+const readMore = document.getElementById('readMore');
 
-getTopHeadLines(API_URL);
+// getTopHeadLines(API_URL);
 
 async function getTopHeadLines(url) {
     const res = await fetch(url);
@@ -34,10 +35,13 @@ function showTopHeadLines(data) {
                 <div class="card-text">
                     <h3>${article.title}</h3>
                     <p>${article.description}</p>
-                    <a href="${article.url}">Read More</a>
+                    <hr>
+                    <p class = "content">${article.content}</p>
+                    <a href="${article.url}">Visit Source</a>
+                    <button id="readMore">Read More</button>
                 </div>
             `
-            console.log(article);
+            // console.log(article);
             cards.appendChild(card);
         })
     } else {
@@ -70,4 +74,8 @@ submitBtn.addEventListener('click', () => {
     } else {
         window.location.reload();
     }
+})
+
+readMore.addEventListener('click', () => {
+    
 })

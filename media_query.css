@@ -9,13 +9,14 @@
     }
 }
 
-@media(max-width: 820 ) and (min-width: 587) {
-    #nav {
-        background-color: #fff;
+@media(max-width: 827px ) and (min-width: 587px) {
+
+    #news-list {
+        margin-top: 200px;
     }
     .nav .container {
         display: flex;
         flex-direction: column;
-        
+        padding: 0;
     }
 }

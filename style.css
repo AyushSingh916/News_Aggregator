@@ -9,6 +9,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
 }
 
 /* --------------------- navbar code --------------------- */
@@ -63,9 +65,14 @@ body {
     font-weight: bold;
 }
 
+.nav .container a {
+    transition: tranform 0.3s ease-in-out;
+}
+
 .nav .container a:hover {
     color: #c0392b;
     font-weight: bolder;
+    font-size: 25px;
 }
 
 .nav .container {
@@ -108,36 +115,54 @@ input {
 }
 
 .card-container {
+    
     display: flex;
     flex-direction: column;
     /* position: relative; */
     /* margin-top: 100px; */
+    background-color: #fff;
+    z-index: 2;
 }
 
 .card {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin: 7px 5px;
     border: 1px solid #796a6a;
     border-radius: 5px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    padding: 2.5px;
 }
 
 .card img {
-    height: 120px;
-    width: 120px;
-    margin: 2px 2px;
+    left: 0;
+    height: 150px;
+    width: 150px;
+    margin: 2px 10pxpx;
     border-radius: 5px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
+.card img:hover {
+    scale: 1.2;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.8);
+}
+
 .card-text {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 2.5px 5px;
+}
+
+.card-text p{
+    margin: 5px;
+}
+.card-text a{
+    text-decoration: none;
 }
 
 .thumbnail {
@@ -148,8 +173,15 @@ input {
 }
 
 #author_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
-    margin-left: 20%;
+}
+
+#readMore {
+    position: absolute;
+    right: 0;
 }
 /* --------------------- footer code --------------------- */
 
