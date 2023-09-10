@@ -1,0 +1,41 @@
+.foot {
+    position: relative;
+    bottom: 0;
+    background-color: #222;
+    height: 75px;
+    color: #fff;
+    /* width: 100vw; */
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.foot .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    width: 100vw;
+}
+
+.foot .container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.foot .container ul a {
+    text-decoration: none;
+    margin: 10px;
+    color: #fff;
+}
+
+.foot .container ul a:hover {
+    color: #c0392b;
+    font-weight: bolder;
+}
+
+#rights {
+    padding: 10px;
+}

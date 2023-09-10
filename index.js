@@ -9,7 +9,7 @@ const submitBtn = document.getElementById('btn');
 const Home = document.getElementById("Home");
 const Contact = document.getElementById("Contact");
 
-getTopHeadLines(API_URL);
+// getTopHeadLines(API_URL);
 
 async function getTopHeadLines(url) {
     const res = await fetch(url);
@@ -29,19 +29,20 @@ function showTopHeadLines(data) {
             card.classList.add('card');
             const imageAddress = (article.urlToImage != null) ? article.urlToImage : 'https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
             
-            // Trim the description to a certain length
             const maxDescriptionLength = 150; // Adjust the desired length
             const description = article.description && article.description.length > maxDescriptionLength
                 ? article.description.slice(0, maxDescriptionLength) + '...' // Add ellipsis
                 : article.description;
             // description = (description === "null") ? "lorem50" : description;
+            const author = article.author && article.author.length > 15
+            ? article.author.slice(0, 15) + '...' : article.author;
 
             card.innerHTML = `
             <h3>${article.title}</h3>
             <div id = "thumbnail_desc">
                 <div id="thumbnail">
                     <img src="${imageAddress}" alt="">
-                    <p id="author_name">${article.author}</p>
+                    <p id="author_name">${author}</p>
                 </div>
                 <div id="card-text">
                     <p>${description}</p> 
@@ -93,3 +94,19 @@ Home.addEventListener('click', () => {
 Contact.addEventListener('click', () => {
     window.location.href = 'mailto:your_email@example.com';
 })
+
+// const servicesButton = document.getElementById("services");
+// const dropdown = document.getElementById("dropdown");
+
+// servicesButton.addEventListener("click", () => {
+//   dropdown.classList.toggle("show");
+// });
+
+// // Close the dropdown if the user clicks outside of it
+// window.addEventListener("click", (event) => {
+//   if (!event.target.matches("#services") && !event.target.matches("#dropdown")) {
+//     if (dropdown.classList.contains("show")) {
+//       dropdown.classList.remove("show");
+//     }
+//   }
+// });
