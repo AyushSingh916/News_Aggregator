@@ -9,7 +9,7 @@ const submitBtn = document.getElementById('btn');
 const Home = document.getElementById("Home");
 const Contact = document.getElementById("Contact");
 
-// getTopHeadLines(API_URL);
+getTopHeadLines(API_URL);
 
 async function getTopHeadLines(url) {
     const res = await fetch(url);
@@ -31,7 +31,7 @@ function showTopHeadLines(data) {
             
             const maxDescriptionLength = 150; // Adjust the desired length
             const description = article.description && article.description.length > maxDescriptionLength
-                ? article.description.slice(0, maxDescriptionLength) + '...' // Add ellipsis
+                ? article.description.slice(0, maxDescriptionLength) + '...'
                 : article.description;
             // description = (description === "null") ? "lorem50" : description;
             const author = article.author && article.author.length > 15
